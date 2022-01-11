@@ -95,13 +95,19 @@ function creaPost(){
 
 creaPost(posts);
 
-//   let likeBtn = document.getElementsByClassName('.like-button');
-//   likeBtn.addEventListener ('click',);
+let likeBtn = document.getElementsByClassName('like-button');
+let likeTot = document.getElementsByClassName ('likes__counter');
 
-  
-//Creo funzione per il like/unlike
 
-function clickLikeDislike(){
+//Creo ciclo per i like
 
-}
+for (let i = 0; i < posts.length; i++) {
+    likeBtn[i].addEventListener('click',function(){
+        this.classList.add("like-button--liked");
+        likeTot.textContent++;
+        document.getElementsByClassName("like-counter-"+ i).innerHTML= posts[i].likes+1;
+
+    }
+    )};
+
 
