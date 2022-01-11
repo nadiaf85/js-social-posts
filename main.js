@@ -56,11 +56,12 @@ const posts = [
     }
 ];
 
+//Creo funzione per creare i post
 
-let postList = document.getElementById('container');
+function creaPost(){
+  for (let i =0; i <posts.length; i++)
 
-  for (let i =0; i <posts.length; i++){
-    postList.innerHTML += `<div class="post">
+    document.getElementById('container').innerHTML += `<div class="post">
     <div class="post__header">
         <div class="post-meta">                    
             <div class="post-meta__icon">
@@ -90,7 +91,9 @@ let postList = document.getElementById('container');
         </div> 
     </div>            
 </div>`
-  };
+};
+
+creaPost(posts);
 
 //   let likeBtn = document.getElementsByClassName('.like-button');
 //   likeBtn.addEventListener ('click',);
