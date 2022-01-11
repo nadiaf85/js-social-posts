@@ -80,7 +80,7 @@ function creaPost(){
     <div class="post__footer">
         <div class="likes js-likes">
             <div class="likes__cta">
-                <a class="like-button  js-like-button" href="#" data-postid="1">
+                <a class="like-button  js-like-button" href="#!" data-postid="1">
                     <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
                     <span class="like-button__label">Mi Piace</span>
                 </a>
@@ -99,13 +99,18 @@ let likeBtn = document.getElementsByClassName('like-button');
 let likeTot = document.getElementById('like-counter-1');
 
 
-//Creo ciclo per i like
+//Creo ciclo per i like/dislike
 
 for (let i = 0; i < posts.length; i++) {
     likeBtn[i].addEventListener('click',function(){
-        this.classList.add("like-button--liked");
-        document.getElementById("like-counter-1"+ i).innerHTML= posts[i].likes+1;
 
+        if (this.classList.contains("like-button--liked")) {
+            this.classList.remove("like-button--liked");
+            likeTot.textContent--
+        } else{
+            this.classList.add("like-button--liked");
+            likeTot.textContent++
+        }
     }
     )};
 
