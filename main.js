@@ -86,7 +86,7 @@ function creaPost(){
                 </a>
             </div>
             <div class="likes__counter">
-                Piace a <b id="like-counter-1" class="js-likes-counter">80</b> persone
+                Piace a <b id="like-counter-1" class="js-likes-counter">${posts[i].likes}</b> persone
             </div>
         </div> 
     </div>            
@@ -96,7 +96,7 @@ function creaPost(){
 creaPost(posts);
 
 let likeBtn = document.getElementsByClassName('like-button');
-let likeTot = document.getElementsByClassName ('likes__counter');
+let likeTot = document.getElementById('like-counter-1');
 
 
 //Creo ciclo per i like
@@ -104,8 +104,7 @@ let likeTot = document.getElementsByClassName ('likes__counter');
 for (let i = 0; i < posts.length; i++) {
     likeBtn[i].addEventListener('click',function(){
         this.classList.add("like-button--liked");
-        likeTot.textContent++;
-        document.getElementsByClassName("like-counter-"+ i).innerHTML= posts[i].likes+1;
+        document.getElementById("like-counter-1"+ i).innerHTML= posts[i].likes+1;
 
     }
     )};
